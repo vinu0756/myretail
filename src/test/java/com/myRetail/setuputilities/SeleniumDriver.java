@@ -3,6 +3,7 @@ package com.myRetail.setuputilities;
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -22,7 +23,7 @@ public class SeleniumDriver {
 			DesiredCapabilities cap = DesiredCapabilities.firefox();
 			//File geckoExecutable = new File("GeckoDriver\\geckodriver.exe");
 			
-			File geckoExecutable = new File("C:\\Users\\hegvi001\\Desktop\\MyRetailAutomationSuite_latest\\MyRetailAutomationSuite_latest\\GeckoDriver\\geckodriver.exe"); // GeckoDriver for windows
+			File geckoExecutable = new File("C:\\Users\\hegvi001\\Documents\\GitHub\\myretail\\GeckoDriver\\chromedriver.exe"); // GeckoDriver for windows
 			
 			//GeckoDriver for mac
 			
@@ -30,9 +31,12 @@ public class SeleniumDriver {
 			
 			
 			System.out.println(geckoExecutable.getAbsolutePath());
-			System.setProperty("webdriver.gecko.driver", geckoExecutable.getAbsolutePath());
-			driver = new FirefoxDriver(); // can be replaced with HtmlUnitDriver
+			//System.setProperty("webdriver.gecko.driver", geckoExecutable.getAbsolutePath());
+			System.setProperty("webdriver.chrome.driver", geckoExecutable.getAbsolutePath());
+			//driver = new FirefoxDriver(); // can be replaced with HtmlUnitDriver
 											// for better performance
+			
+			driver = new ChromeDriver();
 		}
 		return driver;
 
